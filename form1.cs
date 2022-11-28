@@ -54,7 +54,53 @@ namespace kombobox1
             //SecilenOge = comboBox1.Items[indis];
 
             SecilenOge = comboBox1.Items[indis];
-            label1.Text = "Se.ilen öpe:" + SecilenOge.ToString() + " combobox'ın" + indis.ToString() + ". öğesi";
+            label1.Text = "Secilen öge:" + SecilenOge.ToString() + " combobox'ın" + indis.ToString() + ". öğesi";
+
+            //Seçilen öğeyi bulma
+            this.Text = comboBox1.Text;
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string oge = textBox1.Text;
+                comboBox1.Items.Remove(oge);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int indis = int.Parse(textBox1.Text);
+            comboBox1.Items.RemoveAt(indis);
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string oge = textBox1.Text;
+            if (comboBox1.Items.Contains(oge))
+                MessageBox.Show(oge + " var.");
+            else 
+                MessageBox.Show(oge + " yok.");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string oge = textBox1.Text;
+            int indis = comboBox1.Items.IndexOf(oge);
+            if (indis > -1)
+                label1.Text = oge + " var, " + indis.ToString() + ". öğe.";
+            else label1.Text = oge + " yok!";                                   
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int bas, son;
+            bas = 0;
+            son = comboBox1.Items.Count;
         }
     }
 }
