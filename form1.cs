@@ -6,10 +6,17 @@
             listem.Add("C#");
             listem.Add("Java");
             listem.Add("JavaScript");
+
             label1.Text = "Eleman sayısı: "+listem.Count+" Kapasite: "+listem.Capacity+"\n";
             label1.Text = label1.Text + "---------------------------------------------\n";
+
             for (int i = 0; i < listem.Count; i++)
             {
                 label1.Text += listem[i].ToString()+"\n";
             }
+
+            label1.Text += "----------foreach ile----------\n";
+
+            foreach(object nesne in listem)
+                label1.Text += nesne.ToString() + "\n";
         }
