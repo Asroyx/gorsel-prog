@@ -98,9 +98,16 @@ namespace kombobox1
 
         private void button6_Click(object sender, EventArgs e)
         {
+            string mesaj = "";
             int bas, son;
             bas = 0;
             son = comboBox1.Items.Count;
+            for (int i = bas; i < son; i++)
+            {
+                mesaj += i.ToString()+") "+comboBox1.Items[i].ToString()
+                    +Environment.NewLine;
+            }
+            label1.Text = mesaj;
         }
     }
 }
